@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipes | F1 Guide</title>
+    <meta name="description" content="As 10 equipes da Fórmula 1 — história, técnica, pilotos e DNA de cada construtor.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="equipes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="equipes-body">
+
+    <div id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">F<span class="logo-accent">1</span></span>
+            <span class="logo-sub">GUIDE</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item">Início</a>
+            <a href="../historia/historia.html" class="nav-item">História</a>
+            <a href="../classificacao/classificacao.html" class="nav-item">Classificação</a>
+            <a href="../regras/regras.html" class="nav-item">Regras</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="eq-hero">
+        <div class="eq-hero-grid-bg"></div>
+        <div class="eq-hero-inner">
+            <div class="eq-hero-label">
+                <div class="label-line"></div>
+                <span>GRID 2024 — 10 CONSTRUTORES</span>
+                <div class="label-line"></div>
+            </div>
+            <h1 class="eq-hero-title">
+                <span class="eq-t1">AS</span>
+                <span class="eq-t2">EQUIPES</span>
+            </h1>
+            <p class="eq-hero-sub">Cada carro esconde centenas de patentes, milhares de horas de túnel de vento e a obsessão coletiva de vencer em pista.</p>
+        </div>
+        <!-- Team color strip -->
+        <div class="color-strip">
+            <div style="background:#E8002D;flex:2.43"></div>
+            <div style="background:#27F4D2;flex:1.25"></div>
+            <div style="background:#3671C6;flex:1.19"></div>
+            <div style="background:#FF8000;flex:1.83"></div>
+            <div style="background:#229971;flex:0.27"></div>
+            <div style="background:#0093CC;flex:0.35"></div>
+            <div style="background:#64C4FF;flex:1.14"></div>
+            <div style="background:#B6BABD;flex:0.31"></div>
+            <div style="background:#6692FF;flex:0.34"></div>
+            <div style="background:#52E252;flex:0.16"></div>
+        </div>
+    </section>
+
+    <!-- TEAM SELECTOR -->
+    <div class="team-nav-wrap">
+        <div class="team-nav" id="teamNav">
+            <button class="tn-btn active" data-team="ferrari">
+                <span class="tn-dot" style="background:#E8002D"></span>Ferrari
+            </button>
+            <button class="tn-btn" data-team="mercedes">
+                <span class="tn-dot" style="background:#27F4D2"></span>Mercedes
+            </button>
+            <button class="tn-btn" data-team="redbull">
+                <span class="tn-dot" style="background:#3671C6"></span>Red Bull
+            </button>
+            <button class="tn-btn" data-team="mclaren">
+                <span class="tn-dot" style="background:#FF8000"></span>McLaren
+            </button>
+            <button class="tn-btn" data-team="aston">
+                <span class="tn-dot" style="background:#229971"></span>Aston Martin
+            </button>
+            <button class="tn-btn" data-team="alpine">
+                <span class="tn-dot" style="background:#0093CC"></span>Alpine
+            </button>
+            <button class="tn-btn" data-team="williams">
+                <span class="tn-dot" style="background:#64C4FF"></span>Williams
+            </button>
+            <button class="tn-btn" data-team="haas">
+                <span class="tn-dot" style="background:#B6BABD"></span>Haas
+            </button>
+            <button class="tn-btn" data-team="rb">
+                <span class="tn-dot" style="background:#6692FF"></span>RB
+            </button>
+            <button class="tn-btn" data-team="sauber">
+                <span class="tn-dot" style="background:#52E252"></span>Sauber
+            </button>
+        </div>
+    </div>
+
+    <!-- TEAM DETAIL PANELS -->
+    <main class="eq-main">
+
+        <!-- FERRARI -->
+        <article class="team-panel active" id="team-ferrari" data-color="#E8002D">
+            <div class="tp-left">
+                <div class="tp-number">01</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#E8002D">SCUDERIA</div>
+                    <h2 class="tp-name">Ferrari</h2>
+                    <div class="tp-origin">🇮🇹 Maranello · desde 1950</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#E8002D">
+                    <span class="tp-acc-num" style="color:#E8002D">16×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">A Scuderia é a alma da Fórmula 1. Fundada por Enzo Ferrari — um homem que odiava pilotos mas amava carros de corrida — o Cavallino Rampante representa a fusão de paixão italiana com engenharia de ponta. Nenhum título, nenhuma corrida, nenhuma curva existe na F1 sem a sombra vermelha de Maranello.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#E8002D">
+                        <span class="tpd-num">16</span>
+                        <div><strong>Charles Leclerc</strong><span>Mônaco 🇲🇨</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#E8002D">
+                        <span class="tpd-num">55</span>
+                        <div><strong>Carlos Sainz</strong><span>Espanha 🇪🇸</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item">
+                        <span class="tpsg-val" style="color:#E8002D">243</span>
+                        <span class="tpsg-key">Vitórias</span>
+                    </div>
+                    <div class="tpsg-item">
+                        <span class="tpsg-val" style="color:#E8002D">244</span>
+                        <span class="tpsg-key">Pole Positions</span>
+                    </div>
+                    <div class="tpsg-item">
+                        <span class="tpsg-val" style="color:#E8002D">16</span>
+                        <span class="tpsg-key">Títulos Construtores</span>
+                    </div>
+                    <div class="tpsg-item">
+                        <span class="tpsg-val" style="color:#E8002D">15</span>
+                        <span class="tpsg-key">Títulos Pilotos</span>
+                    </div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Ferrari 066/12 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Maranello, Itália</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Frédéric Vasseur</span></div>
+                        <div class="tpt-row"><span>Designer chefe</span><span>Enrico Cardile</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Ferrari SF-24</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">DOMÍNIO HISTÓRICO</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:100%;background:#E8002D">
+                        <span>243 vitórias — a mais vencedora da história</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- MERCEDES -->
+        <article class="team-panel" id="team-mercedes" data-color="#27F4D2">
+            <div class="tp-left">
+                <div class="tp-number">02</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#27F4D2">AMG PETRONAS</div>
+                    <h2 class="tp-name">Mercedes</h2>
+                    <div class="tp-origin">🇩🇪 Brackley, Reino Unido · desde 2010</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#27F4D2">
+                    <span class="tp-acc-num" style="color:#27F4D2">8×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">De 2014 a 2021, a Mercedes criou a maior dinastia da história moderna da F1. Oito títulos consecutivos de construtores, sete de Hamilton. O motor híbrido W06 foi tão dominante que mudou as regras do esporte. Agora a estrela de prata refaz o caminho rumo ao topo.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#27F4D2">
+                        <span class="tpd-num">44</span>
+                        <div><strong>Lewis Hamilton</strong><span>Reino Unido 🇬🇧</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#27F4D2">
+                        <span class="tpd-num">63</span>
+                        <div><strong>George Russell</strong><span>Reino Unido 🇬🇧</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#27F4D2">125</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#27F4D2">128</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#27F4D2">8</span><span class="tpsg-key">Títulos Construtores</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#27F4D2">7</span><span class="tpsg-key">Títulos Pilotos</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Mercedes M15 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Brackley, Reino Unido</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Toto Wolff</span></div>
+                        <div class="tpt-row"><span>Designer chefe</span><span>James Allison</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Mercedes W15</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">DOMÍNIO HISTÓRICO</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:51%;background:#27F4D2"><span>125 vitórias</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- RED BULL -->
+        <article class="team-panel" id="team-redbull" data-color="#3671C6">
+            <div class="tp-left">
+                <div class="tp-number">03</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#3671C6">ORACLE</div>
+                    <h2 class="tp-name">Red Bull Racing</h2>
+                    <div class="tp-origin">🇦🇹 Milton Keynes, Reino Unido · desde 2005</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#3671C6">
+                    <span class="tp-acc-num" style="color:#3671C6">6×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">Uma bebida energética que financiou a equipe mais dominante dos anos 2010. Adrian Newey — o maior engenheiro da história da F1 — projetou carros que pareciam fraudar as leis da física. Em 2023, Max Verstappen venceu 19 das 22 corridas. Um domínio perturbador.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#3671C6">
+                        <span class="tpd-num">1</span>
+                        <div><strong>Max Verstappen</strong><span>Holanda 🇳🇱</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#3671C6">
+                        <span class="tpd-num">11</span>
+                        <div><strong>Sergio Pérez</strong><span>México 🇲🇽</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#3671C6">119</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#3671C6">101</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#3671C6">6</span><span class="tpsg-key">Títulos Construtores</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#3671C6">4</span><span class="tpsg-key">Títulos Pilotos</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Honda RBPTH002 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Milton Keynes, Reino Unido</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Christian Horner</span></div>
+                        <div class="tpt-row"><span>Designer chefe</span><span>Adrian Newey (saiu em 2024)</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Red Bull RB20</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">DOMÍNIO HISTÓRICO</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:49%;background:#3671C6"><span>119 vitórias</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- McLAREN -->
+        <article class="team-panel" id="team-mclaren" data-color="#FF8000">
+            <div class="tp-left">
+                <div class="tp-number">04</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#FF8000">PAPAYA</div>
+                    <h2 class="tp-name">McLaren</h2>
+                    <div class="tp-origin">🇬🇧 Woking, Reino Unido · desde 1963</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#FF8000">
+                    <span class="tp-acc-num" style="color:#FF8000">8×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">Casa de Senna. Casa de Prost. Casa de Hamilton. A McLaren foi por décadas sinônimo de perfeição britânica na pista. Após anos sombrios, o ressurgimento laranja chegou. Lando Norris e Oscar Piastri representam a nova geração de um projeto sério de reconquista do título.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#FF8000">
+                        <span class="tpd-num">4</span>
+                        <div><strong>Lando Norris</strong><span>Reino Unido 🇬🇧</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#FF8000">
+                        <span class="tpd-num">81</span>
+                        <div><strong>Oscar Piastri</strong><span>Austrália 🇦🇺</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#FF8000">183</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#FF8000">156</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#FF8000">8</span><span class="tpsg-key">Títulos Construtores</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#FF8000">12</span><span class="tpsg-key">Títulos Pilotos</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Mercedes M15 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Woking, Reino Unido</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Andrea Stella</span></div>
+                        <div class="tpt-row"><span>Designer chefe</span><span>Peter Prodromou</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>McLaren MCL38</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">DOMÍNIO HISTÓRICO</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:75%;background:#FF8000"><span>183 vitórias</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ASTON MARTIN -->
+        <article class="team-panel" id="team-aston" data-color="#229971">
+            <div class="tp-left">
+                <div class="tp-number">05</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#229971">ARAMCO</div>
+                    <h2 class="tp-name">Aston Martin</h2>
+                    <div class="tp-origin">🇬🇧 Silverstone, Reino Unido · desde 2021</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#229971">
+                    <span class="tp-acc-num" style="color:#229971">0×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">Lawrence Stroll comprou a Racing Point e transformou em Aston Martin. Construiu uma das mais modernas fábricas do paddock em Silverstone. Com Fernando Alonso — bicampeão mundial, lenda viva — ao volante, a ambição de título é declarada e levada muito a sério.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#229971">
+                        <span class="tpd-num">14</span>
+                        <div><strong>Fernando Alonso</strong><span>Espanha 🇪🇸</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#229971">
+                        <span class="tpd-num">18</span>
+                        <div><strong>Lance Stroll</strong><span>Canadá 🇨🇦</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#229971">1</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#229971">0</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#229971">2021</span><span class="tpsg-key">Ano de fundação</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#229971">Top 5</span><span class="tpsg-key">Posição alvo</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Mercedes M15 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Silverstone, Reino Unido</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Mike Krack</span></div>
+                        <div class="tpt-row"><span>Designer chefe</span><span>Dan Fallows</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Aston Martin AMR24</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">VITÓRIAS HISTÓRICAS</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:5%;background:#229971"><span>1 vitória · projeto jovem</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ALPINE -->
+        <article class="team-panel" id="team-alpine" data-color="#0093CC">
+            <div class="tp-left">
+                <div class="tp-number">06</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#0093CC">BWT</div>
+                    <h2 class="tp-name">Alpine F1 Team</h2>
+                    <div class="tp-origin">🇫🇷 Enstone · desde 2021</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#0093CC">
+                    <span class="tp-acc-num" style="color:#0093CC">2×</span>
+                    <span class="tp-acc-label">Campeão<br>(como Renault)</span>
+                </div>
+                <p class="tp-bio">Herdeira da Renault que colocou Alonso no topo do mundo em 2005 e 2006. A Alpine busca o orgulho francês que conquistou títulos. O motor Renault próprio foi abandonado — em 2026 voltarão com nova unidade de potência numa aposta grande em soberania técnica.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#0093CC">
+                        <span class="tpd-num">10</span>
+                        <div><strong>Pierre Gasly</strong><span>França 🇫🇷</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#0093CC">
+                        <span class="tpd-num">31</span>
+                        <div><strong>Esteban Ocon</strong><span>França 🇫🇷</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#0093CC">35</span><span class="tpsg-key">Vitórias (Renault)</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#0093CC">31</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#0093CC">2</span><span class="tpsg-key">Títulos Construtores</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#0093CC">2026</span><span class="tpsg-key">Novo motor</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Renault E-Tech — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Enstone, Reino Unido</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Bruno Famin</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Alpine A524</span></div>
+                        <div class="tpt-row"><span>Grande projeto</span><span>Motor próprio 2026</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">DOMÍNIO HISTÓRICO (RENAULT)</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:14%;background:#0093CC"><span>35 vitórias</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- WILLIAMS -->
+        <article class="team-panel" id="team-williams" data-color="#64C4FF">
+            <div class="tp-left">
+                <div class="tp-number">07</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#64C4FF">GULF OIL</div>
+                    <h2 class="tp-name">Williams</h2>
+                    <div class="tp-origin">🇬🇧 Grove, Reino Unido · desde 1977</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#64C4FF">
+                    <span class="tp-acc-num" style="color:#64C4FF">7×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">Frank Williams construiu uma equipe do zero e venceu 7 títulos de construtores. Mansell, Prost, Hill, Villeneuve — campeões que passaram pela Grove. Vendida à Dorilton Capital em 2020, a equipe tenta reencontrar uma grandeza que parece distante mas não impossível.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#64C4FF">
+                        <span class="tpd-num">23</span>
+                        <div><strong>Alexander Albon</strong><span>Tailândia 🇹🇭</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#64C4FF">
+                        <span class="tpd-num">2</span>
+                        <div><strong>Logan Sargeant</strong><span>EUA 🇺🇸</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#64C4FF">114</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#64C4FF">128</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#64C4FF">7</span><span class="tpsg-key">Títulos Construtores</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#64C4FF">1977</span><span class="tpsg-key">Fundação</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Mercedes M15 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Grove, Reino Unido</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>James Vowles</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Williams FW46</span></div>
+                        <div class="tpt-row"><span>Investidor</span><span>Dorilton Capital</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">DOMÍNIO HISTÓRICO</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:47%;background:#64C4FF"><span>114 vitórias</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- HAAS -->
+        <article class="team-panel" id="team-haas" data-color="#B6BABD">
+            <div class="tp-left">
+                <div class="tp-number">08</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#B6BABD">MONEYGRAM</div>
+                    <h2 class="tp-name">Haas F1 Team</h2>
+                    <div class="tp-origin">🇺🇸 Kannapolis, EUA · desde 2016</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#B6BABD">
+                    <span class="tp-acc-num" style="color:#B6BABD">0×</span>
+                    <span class="tp-acc-label">Campeão<br>Construtores</span>
+                </div>
+                <p class="tp-bio">Gene Haas criou a única equipe genuinamente americana da F1 moderna. O modelo de negócio é inteligente: compra componentes da Ferrari (exceto motor, caixa e chassi) para maximizar eficiência. Nico Hülkenberg — piloto sem vitória mais experiente da história — lidera o projeto.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#B6BABD">
+                        <span class="tpd-num">27</span>
+                        <div><strong>Nico Hülkenberg</strong><span>Alemanha 🇩🇪</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#B6BABD">
+                        <span class="tpd-num">20</span>
+                        <div><strong>Kevin Magnussen</strong><span>Dinamarca 🇩🇰</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#B6BABD">0</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#B6BABD">0</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#B6BABD">2016</span><span class="tpsg-key">Estreia na F1</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#B6BABD">5°</span><span class="tpsg-key">Melhor no construtores</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Ferrari 066/12 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Kannapolis, EUA / Banbury, UK</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Ayao Komatsu</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Haas VF-24</span></div>
+                        <div class="tpt-row"><span>Modelo</span><span>Cliente Ferrari</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">MELHOR RESULTADO CONSTRUTOR</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:20%;background:#B6BABD"><span>5° lugar — 2022</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- RB -->
+        <article class="team-panel" id="team-rb" data-color="#6692FF">
+            <div class="tp-left">
+                <div class="tp-number">09</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#6692FF">VISA CASHAPP</div>
+                    <h2 class="tp-name">RB F1 Team</h2>
+                    <div class="tp-origin">🇮🇹 Faenza, Itália · desde 2006</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#6692FF">
+                    <span class="tp-acc-num" style="color:#6692FF">1×</span>
+                    <span class="tp-acc-label">Vitória<br>(como STR)</span>
+                </div>
+                <p class="tp-bio">Antes Toro Rosso, depois AlphaTauri, agora RB. A equipe B da Red Bull é o berço de gênios: Vettel venceu o GP da Itália 2008 com 21 anos, Ricciardo e Verstappen passaram por lá. É o laboratório onde a Red Bull testa seus jovens talentos antes de promovê-los.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#6692FF">
+                        <span class="tpd-num">22</span>
+                        <div><strong>Yuki Tsunoda</strong><span>Japão 🇯🇵</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#6692FF">
+                        <span class="tpd-num">3</span>
+                        <div><strong>Daniel Ricciardo</strong><span>Austrália 🇦🇺</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#6692FF">1</span><span class="tpsg-key">Vitórias</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#6692FF">1</span><span class="tpsg-key">Pole Positions</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#6692FF">2006</span><span class="tpsg-key">Fundação (STR)</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#6692FF">Vettel</span><span class="tpsg-key">Maior piloto formado</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Honda RBPTH002 — V6 híbrido</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Faenza, Itália</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Laurent Mekies</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>RB VCARB 01</span></div>
+                        <div class="tpt-row"><span>Vínculo</span><span>Equipe satélite Red Bull</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">HISTÓRICO DE TALENTOS REVELADOS</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:60%;background:#6692FF"><span>Vettel · Ricciardo · Verstappen · Gasly · Tsunoda</span></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SAUBER -->
+        <article class="team-panel" id="team-sauber" data-color="#52E252">
+            <div class="tp-left">
+                <div class="tp-number">10</div>
+                <div class="tp-identity">
+                    <div class="tp-code" style="color:#52E252">STAKE / AUDI 2026</div>
+                    <h2 class="tp-name">Kick Sauber</h2>
+                    <div class="tp-origin">🇨🇭 Hinwil, Suíça · desde 1993</div>
+                </div>
+                <div class="tp-accolade" style="border-color:#52E252">
+                    <span class="tp-acc-num" style="color:#52E252">AUDI</span>
+                    <span class="tp-acc-label">Parceria<br>2026</span>
+                </div>
+                <p class="tp-bio">A histórica equipe suíça de Peter Sauber formou talentos e sobreviveu décadas. Em 2026 se tornará a equipe de fábrica da Audi — a maior notícia da F1 em anos. A chegada de um fabricante alemão premium promete sacudir o grid com investimento massivo.</p>
+                <div class="tp-drivers-title">PILOTOS 2024</div>
+                <div class="tp-drivers">
+                    <div class="tp-driver" style="--dc:#52E252">
+                        <span class="tpd-num">77</span>
+                        <div><strong>Valtteri Bottas</strong><span>Finlândia 🇫🇮</span></div>
+                    </div>
+                    <div class="tp-driver" style="--dc:#52E252">
+                        <span class="tpd-num">24</span>
+                        <div><strong>Zhou Guanyu</strong><span>China 🇨🇳</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-right">
+                <div class="tp-stats-grid">
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#52E252">1</span><span class="tpsg-key">Vitória</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#52E252">1993</span><span class="tpsg-key">Fundação</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#52E252">2026</span><span class="tpsg-key">Vira Audi F1</span></div>
+                    <div class="tpsg-item"><span class="tpsg-val" style="color:#52E252">∞</span><span class="tpsg-key">Expectativa 2026</span></div>
+                </div>
+                <div class="tp-tech">
+                    <div class="tp-tech-title">FICHA TÉCNICA</div>
+                    <div class="tp-tech-grid">
+                        <div class="tpt-row"><span>Motor</span><span>Ferrari 066/12 — V6 (2024)</span></div>
+                        <div class="tpt-row"><span>Sede</span><span>Hinwil, Suíça</span></div>
+                        <div class="tpt-row"><span>Chefe de equipe</span><span>Alessandro Alunni Bravi</span></div>
+                        <div class="tpt-row"><span>Chassis</span><span>Sauber C44</span></div>
+                        <div class="tpt-row"><span>Em 2026</span><span>Motor Audi próprio</span></div>
+                        <div class="tpt-row"><span>Pneus</span><span>Pirelli P Zero</span></div>
+                    </div>
+                </div>
+                <div class="tp-bar-label">EXPECTATIVA — TRANSFORMAÇÃO 2026</div>
+                <div class="tp-history-bar">
+                    <div class="thb-fill" style="width:90%;background:linear-gradient(to right,#52E252,#aaa)"><span>🚀 Audi F1 — nova era começa</span></div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide</p>
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../classificacao/classificacao.html">Classificação</a>
+                <a href="../regras/regras.html">Regras</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="equipes.js"></script>
+</body>
+</html>

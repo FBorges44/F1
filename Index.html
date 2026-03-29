@@ -3,25 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Odisséia da Fórmula 1</title>
+    <title>F1 Guide | A Odisseia da Velocidade</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="hero-section">
-        <div class="overlay"></div>
-        <nav class="navbar">
-            <img class="logo" src="imagens/f1_logo.png" alt="F1 Logo">
+    <div id="scrollProgress"></div>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- Noise overlay -->
+    <div class="noise-overlay"></div>
+
+    <header class="hero">
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </a>
             <div class="nav-links">
+                <a href="historia/historia.html" class="nav-item">História</a>
+                <a href="menu/menu.html" class="nav-item">Menu</a>
+                <a href="pilotos/senna.html" class="nav-item">Pilotos</a>
             </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
-        
+
+        <div class="hero-bg">
+            <div class="hero-video-wrap">
+                <img src="https://64.media.tumblr.com/07321ce7fe49520548fd63d4b057b62f/tumblr_nlku10bAC91snbxmfo1_400.gif" alt="F1 Car" class="hero-img">
+            </div>
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+
         <div class="hero-content">
-            <h1>Fórmula 1</h1>
-            <p>A história escrita a 300 km/h</p>
-            <a href="Historia/historia.html" class="btn-scroll">Proximos passos</a>
+            <div class="hero-tag">
+                <span class="tag-dot"></span>
+                <span>TEMPORADA 2026 • AO VIVO</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line line-1">FÓRMULA</span>
+                <span class="title-line line-2">UM</span>
+            </h1>
+            <p class="hero-sub">A história escrita a <em>300 km/h</em></p>
+            <div class="hero-cta">
+                <a href="historia/historia.html" class="btn-primary">
+                    <span>Explorar</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="classificacao/classificacao.html" class="btn-ghost">Classificação →</a>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hstat"><span class="hstat-num" data-target="74">0</span><span class="hstat-label">Anos</span></div>
+            <div class="hstat-divider"></div>
+            <div class="hstat"><span class="hstat-num" data-target="1100">0</span><span class="hstat-label">GPs Realizados</span></div>
+            <div class="hstat-divider"></div>
+            <div class="hstat"><span class="hstat-num" data-target="34">0</span><span class="hstat-label">Campeões</span></div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
         </div>
     </header>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker" id="ticker">
+            <span>🏎️ MAX VERSTAPPEN • RED BULL RACING</span>
+            <span>•</span>
+            <span>🏁 PRÓXIMO GP: JAPÃO • SUZUKA</span>
+            <span>•</span>
+            <span>⚡ MOTORES HÍBRIDOS 2026 • NOVA ERA</span>
+            <span>•</span>
+            <span>🏆 HAMILTON BUSCA 8º TÍTULO</span>
+            <span>•</span>
+            <span>🔴 FERRARI SF-24 • VOLTA AO TOPO</span>
+            <span>•</span>
+            <span>🏎️ MAX VERSTAPPEN • RED BULL RACING</span>
+            <span>•</span>
+            <span>🏁 PRÓXIMO GP: JAPÃO • SUZUKA</span>
+            <span>•</span>
+            <span>⚡ MOTORES HÍBRIDOS 2026 • NOVA ERA</span>
+            <span>•</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- Seção Features -->
+        <section class="features" id="features">
+            <div class="section-header">
+                <span class="section-tag">EXPLORE</span>
+                <h2>O Universo da F1</h2>
+            </div>
+            <div class="feature-grid">
+                <a href="historia/historia.html" class="feature-card" data-index="1">
+                    <div class="card-number">01</div>
+                    <div class="card-icon">📖</div>
+                    <h3>História</h3>
+                    <p>De Silverstone 1950 aos hipercarro de hoje. 74 anos de evolução e lenda.</p>
+                    <div class="card-arrow">→</div>
+                    <div class="card-hover-bg"></div>
+                </a>
+                <a href="equipes/equipes.html" class="feature-card" data-index="2">
+                    <div class="card-number">02</div>
+                    <div class="card-icon">🏎️</div>
+                    <h3>Equipes</h3>
+                    <p>A engenharia por trás das máquinas de 1000cv. Ferrari, Mercedes, Red Bull.</p>
+                    <div class="card-arrow">→</div>
+                    <div class="card-hover-bg"></div>
+                </a>
+                <a href="pilotos/senna.html" class="feature-card" data-index="3">
+                    <div class="card-number">03</div>
+                    <div class="card-icon">🏆</div>
+                    <h3>Pilotos</h3>
+                    <p>Os gladiadores do asfalto. Senna, Schumacher, Hamilton — os imortais.</p>
+                    <div class="card-arrow">→</div>
+                    <div class="card-hover-bg"></div>
+                </a>
+                <a href="menu/menu.html" class="feature-card feature-card--wide" data-index="4">
+                    <div class="card-number">04</div>
+                    <div class="card-icon">🔬</div>
+                    <h3>Técnica & Regras</h3>
+                    <p>DRS, pit stops, pit wall, compostos de pneus e regulamento FIA. Entenda cada detalhe que decide um campeonato.</p>
+                    <div class="card-arrow">→</div>
+                    <div class="card-hover-bg"></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção Quote -->
+        <section class="quote-section">
+            <div class="quote-line"></div>
+            <blockquote>
+                <p>"Se você não está vivendo no limite, você está ocupando espaço."</p>
+                <cite>— Ayrton Senna</cite>
+            </blockquote>
+            <div class="quote-line"></div>
+        </section>
+
+        <!-- Seção Piloto Destaque -->
+        <section class="spotlight">
+            <div class="spotlight-text">
+                <span class="section-tag">LENDA</span>
+                <h2>Ayrton Senna</h2>
+                <p class="spotlight-desc">Três vezes campeão mundial. O piloto mais amado da história. Senna não apenas vencia — ele voava. Sua qualificação em Mônaco 1984 ainda é considerada a maior volta da história.</p>
+                <div class="spotlight-stats">
+                    <div class="sp-stat"><strong>3</strong><span>Títulos Mundiais</span></div>
+                    <div class="sp-stat"><strong>41</strong><span>Vitórias</span></div>
+                    <div class="sp-stat"><strong>65</strong><span>Pole Positions</span></div>
+                </div>
+                <a href="pilotos/senna.html" class="btn-primary">Ver perfil completo →</a>
+            </div>
+            <div class="spotlight-img">
+                <div class="img-frame">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Ayrton_Senna_1991_Canada.jpg/800px-Ayrton_Senna_1991_Canada.jpg" alt="Ayrton Senna">
+                    <div class="img-overlay"></div>
+                </div>
+                <div class="img-badge">
+                    <span>#12</span>
+                    <span>McLaren</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide — Do asfalto para a eternidade</p>
+            <div class="footer-links">
+                <a href="historia/historia.html">História</a>
+                <a href="menu/menu.html">Menu</a>
+                <a href="pilotos/senna.html">Pilotos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

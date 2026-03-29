@@ -3,80 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História | Fórmula 1 Guide</title>
+    <title>História | F1 Guide</title>
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="historia.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body class="historia-body">
 
-    <header class="navbar">
-        <div class="logo-container">
-            <img class="logo" src="/" alt="F1 Logo">
+    <div id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">F<span class="logo-accent">1</span></span>
+            <span class="logo-sub">GUIDE</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item">Início</a>
+            <a href="../menu/menu.html" class="nav-item">Menu</a>
+            <a href="../pilotos/senna.html" class="nav-item">Pilotos</a>
         </div>
-        <nav class="nav-links">
-            <a href="/Index.html">Início</a>
-            <a href="/menu/menu.html">Menu</a>
-        </nav>
-    </header>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-    <main id="historia" class="container">
-        
-        <header class="titulo-sessao">
-            <span class="tag-f1">Legado</span>
-            <h1>A Evolução da Velocidade</h1>
-            <p>De Silverstone 1950 aos hiper-carros tecnológicos de hoje.</p>
-        </header>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/1954_French_Grand_Prix_Reims_-_Juan_Manuel_Fangio.jpg/1920px-1954_French_Grand_Prix_Reims_-_Juan_Manuel_Fangio.jpg" alt="F1 História" class="page-hero-img">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="page-hero-content">
+            <span class="section-tag">Legado</span>
+            <h1>A Evolução<br>da Velocidade</h1>
+            <p>De Silverstone 1950 aos hipercarro de hoje</p>
+        </div>
+        <div class="page-hero-scroll">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
 
-        <section id="origem" class="section-content">
-            <div class="text-block">
-                <h2>1950: O Nascimento do Mito</h2>
-                <p>
-                    Tudo começou nas pistas de pouso desativadas da Segunda Guerra Mundial. O primeiro Grande Prêmio oficial aconteceu em <strong>Silverstone</strong>. Naquela época, os pilotos eram cavaleiros modernos que enfrentavam máquinas de metal bruto sem qualquer cinto de segurança.
-                </p>
-                <p>
-                    O lendário <strong>Juan Manuel Fangio</strong> dominou essa era, conquistando 5 títulos com quatro equipes diferentes — um feito que permanece como prova de puro talento bruto.
-                </p>
-            </div>
-            <div class="image-block">
-                <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2020/10/29/fangio-maserati-monaco.jpg" alt="Fangio em ação">
-            </div>
-        </section>
+    <!-- Timeline Intro -->
+    <div class="ticker-wrap">
+        <div class="ticker" id="ticker">
+            <span>1950 • SILVERSTONE • PRIMEIRO GP</span><span>•</span>
+            <span>1969 • JACKIE STEWART • CAMPEÃO</span><span>•</span>
+            <span>1984 • SENNA • MÔNACO • LENDA</span><span>•</span>
+            <span>1994 • IMOLA • O DIA QUE MUDOU TUDO</span><span>•</span>
+            <span>2000 • SCHUMACHER • DINASTIA</span><span>•</span>
+            <span>2020 • HAMILTON • 7 TÍTULOS</span><span>•</span>
+            <span>1950 • SILVERSTONE • PRIMEIRO GP</span><span>•</span>
+            <span>1969 • JACKIE STEWART • CAMPEÃO</span><span>•</span>
+        </div>
+    </div>
 
-        <section id="eras" class="section-content reverse">
-            <div class="text-block">
-                <h2>A Era de Ouro e a Rivalidade</h2>
-                <p>
-                    Nos anos 80 e 90, a Fórmula 1 atingiu um patamar cultural sem precedentes. A rivalidade entre <strong>Ayrton Senna</strong> e <strong>Alain Prost</strong> transcendeu o esporte, misturando política, técnica e coragem sobre-humana.
-                </p>
-                <p>
-                    Foi o período dos motores Turbo que sopravam mais de 1000 cavalos de potência, transformando os carros em monstros indomáveis que exigiam precisão absoluta.
-                </p>
-            </div>
-            <div class="image-block">
-                <img src="https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0501%2Fr1327083_1296x729_16%2D9.jpg" alt="Senna e Prost">
-            </div>
-        </section>
+    <main class="historia-main">
 
-        <section class="stats-grid">
-            <div class="stat-card">
-                <h3>74</h3>
-                <p>Anos de História</p>
+        <!-- Era 1: Origem -->
+        <article class="era" id="origem">
+            <div class="era-label">
+                <span class="era-year">1950</span>
+                <div class="era-line"></div>
             </div>
-            <div class="stat-card">
-                <h3>+1000</h3>
-                <p>Grandes Prêmios</p>
+            <div class="era-content">
+                <div class="era-text">
+                    <span class="section-tag">Capítulo I</span>
+                    <h2>O Nascimento do Mito</h2>
+                    <p>Tudo começou nas pistas de pouso desativadas da Segunda Guerra Mundial. O primeiro Grande Prêmio oficial da Fórmula 1 aconteceu em <strong>Silverstone</strong>, no Reino Unido. Naquela época, os pilotos eram cavaleiros modernos que enfrentavam máquinas de metal bruto sem qualquer cinto de segurança.</p>
+                    <p>O lendário <strong>Juan Manuel Fangio</strong> dominou essa era, conquistando 5 títulos com quatro equipes diferentes — um feito que permanece como prova de puro talento bruto, igualado apenas por Lewis Hamilton décadas depois.</p>
+                    <div class="era-facts">
+                        <div class="fact">
+                            <strong>1950</strong>
+                            <span>Primeiro GP oficial</span>
+                        </div>
+                        <div class="fact">
+                            <strong>5×</strong>
+                            <span>Títulos de Fangio</span>
+                        </div>
+                        <div class="fact">
+                            <strong>Alfa Romeo</strong>
+                            <span>Dominou a era</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="era-image">
+                    <img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2020/10/29/fangio-maserati-monaco.jpg" alt="Fangio em ação">
+                    <div class="era-img-caption">Juan Manuel Fangio — O Maestro</div>
+                </div>
             </div>
-            <div class="stat-card">
-                <h3>+20</h3>
-                <p>Circuitos por Ano</p>
+        </article>
+
+        <!-- Era 2: Ouro -->
+        <article class="era era--reverse" id="ouro">
+            <div class="era-label">
+                <span class="era-year">1980s</span>
+                <div class="era-line"></div>
+            </div>
+            <div class="era-content">
+                <div class="era-text">
+                    <span class="section-tag">Capítulo II</span>
+                    <h2>Era de Ouro & a Grande Rivalidade</h2>
+                    <p>Nos anos 80 e 90, a Fórmula 1 atingiu um patamar cultural sem precedentes. A rivalidade entre <strong>Ayrton Senna</strong> e <strong>Alain Prost</strong> transcendeu o esporte, misturando política, psicologia, técnica e coragem sobre-humana.</p>
+                    <p>Foi o período dos motores Turbo que sopravam mais de <strong>1.300 cavalos de potência</strong>, transformando os carros em monstros indomáveis que exigiam precisão absoluta e coragem irracional dos pilotos.</p>
+                    <div class="era-facts">
+                        <div class="fact">
+                            <strong>1.300cv</strong>
+                            <span>Motores Turbo</span>
+                        </div>
+                        <div class="fact">
+                            <strong>Senna vs Prost</strong>
+                            <span>A maior rivalidade</span>
+                        </div>
+                        <div class="fact">
+                            <strong>McLaren-Honda</strong>
+                            <span>Domínio absoluto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="era-image">
+                    <img src="https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0501%2Fr1327083_1296x729_16%2D9.jpg" alt="Senna e Prost">
+                    <div class="era-img-caption">Senna & Prost — Gênios em Guerra</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Era 3: Schumacher -->
+        <article class="era" id="schumi">
+            <div class="era-label">
+                <span class="era-year">2000s</span>
+                <div class="era-line"></div>
+            </div>
+            <div class="era-content">
+                <div class="era-text">
+                    <span class="section-tag">Capítulo III</span>
+                    <h2>A Dinastia Vermelha</h2>
+                    <p><strong>Michael Schumacher</strong> e a Ferrari escreveram um dos capítulos mais dominantes da história do esporte. Cinco títulos consecutivos de 2000 a 2004 definiram uma época e estabeleceram padrões que pareciam inalcançáveis.</p>
+                    <p>O alemão revolucionou a preparação física dos pilotos, os processos de desenvolvimento de carro e a própria relação entre piloto e equipe. Sua obsessão por detalhe transformou a Fórmula 1 para sempre.</p>
+                    <div class="era-facts">
+                        <div class="fact">
+                            <strong>7×</strong>
+                            <span>Títulos de Schumi</span>
+                        </div>
+                        <div class="fact">
+                            <strong>5 seguidos</strong>
+                            <span>Com Ferrari</span>
+                        </div>
+                        <div class="fact">
+                            <strong>91</strong>
+                            <span>Vitórias na F1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="era-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Michael_Schumacher_2012_Malaysia_FP2.jpg/1200px-Michael_Schumacher_2012_Malaysia_FP2.jpg" alt="Michael Schumacher">
+                    <div class="era-img-caption">Michael Schumacher — O Kaiser</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Stats -->
+        <section class="historia-stats">
+            <div class="hstat-grid">
+                <div class="hstat-card stat-card">
+                    <div class="hstat-icon">🏆</div>
+                    <h3 class="hstat-num" data-target="74">0</h3>
+                    <p>Anos de História</p>
+                </div>
+                <div class="hstat-card stat-card">
+                    <div class="hstat-icon">🏁</div>
+                    <h3 class="hstat-num" data-target="1100">0</h3>
+                    <p>Grandes Prêmios</p>
+                </div>
+                <div class="hstat-card stat-card">
+                    <div class="hstat-icon">🌍</div>
+                    <h3 class="hstat-num" data-target="23">0</h3>
+                    <p>Circuitos por Ano</p>
+                </div>
+                <div class="hstat-card stat-card">
+                    <div class="hstat-icon">🚀</div>
+                    <h3 class="hstat-num" data-target="340">0</h3>
+                    <p>Velocidade Máxima km/h</p>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <p>© 2026 Fórmula One Guide | Do asfalto para a eternidade</p>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide — Do asfalto para a eternidade</p>
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../menu/menu.html">Menu</a>
+            </div>
+        </div>
     </footer>
 
+    <script src="../script.js"></script>
 </body>
 </html>

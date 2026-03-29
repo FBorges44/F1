@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação | F1 Guide</title>
+    <meta name="description" content="Classificação do Campeonato Mundial de Fórmula 1 — pilotos e construtores com dados oficiais.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="classificacao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="class-body">
+
+    <div id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">F<span class="logo-accent">1</span></span>
+            <span class="logo-sub">GUIDE</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item">Início</a>
+            <a href="../equipes/equipes.html" class="nav-item">Equipes</a>
+            <a href="../regras/regras.html" class="nav-item">Regras</a>
+            <a href="../pilotos/senna.html" class="nav-item">Pilotos</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="cl-hero">
+        <div class="cl-hero-left">
+            <span class="section-tag">Temporada 2024</span>
+            <h1>Classificação<br>Mundial</h1>
+            <div class="cl-season-info" id="seasonInfo">
+                <div class="csi-item">
+                    <span class="csi-val" id="roundNum">—</span>
+                    <span class="csi-key">Corridas realizadas</span>
+                </div>
+                <div class="csi-item">
+                    <span class="csi-val" id="remainNum">—</span>
+                    <span class="csi-key">Restantes</span>
+                </div>
+            </div>
+        </div>
+        <div class="cl-hero-right" id="heroLeaders">
+            <!-- Preenchido via JS -->
+            <div class="hero-loading"><div class="spinner"></div></div>
+        </div>
+    </section>
+
+    <!-- TABS -->
+    <div class="cl-tab-bar">
+        <button class="cl-tab active" data-tab="drivers">
+            <span>🏆</span> Pilotos
+        </button>
+        <button class="cl-tab" data-tab="constructors">
+            <span>🔧</span> Construtores
+        </button>
+    </div>
+
+    <main class="cl-main">
+
+        <!-- PILOTOS -->
+        <section id="tab-drivers" class="cl-tab-content active">
+            <div class="loading-state" id="loadingDrivers">
+                <div class="spinner"></div>
+                <p>Carregando dados da API Ergast F1...</p>
+            </div>
+            <div class="error-state hidden" id="errorDrivers">
+                <span>⚠️</span>
+                <p>Não foi possível carregar. Verifique a conexão.</p>
+                <button onclick="loadDrivers()" class="btn-retry">Tentar novamente</button>
+            </div>
+
+            <!-- Desktop table -->
+            <div class="cl-table hidden" id="driversTable">
+                <div class="cl-table-head">
+                    <span>POS</span>
+                    <span>PILOTO</span>
+                    <span>EQUIPE</span>
+                    <span class="col-nat">NAC</span>
+                    <span class="col-wins">V</span>
+                    <span>PONTOS</span>
+                </div>
+                <div id="driversBody"></div>
+            </div>
+        </section>
+
+        <!-- CONSTRUTORES -->
+        <section id="tab-constructors" class="cl-tab-content">
+            <div class="loading-state" id="loadingConstructors">
+                <div class="spinner"></div>
+                <p>Carregando construtores...</p>
+            </div>
+            <div class="error-state hidden" id="errorConstructors">
+                <span>⚠️</span>
+                <p>Não foi possível carregar.</p>
+                <button onclick="loadConstructors()" class="btn-retry">Tentar novamente</button>
+            </div>
+            <div class="cl-constructor-list hidden" id="constructorsList"></div>
+        </section>
+
+    </main>
+
+    <div class="cl-data-source">
+        <span>⚡ Dados: Ergast Developer API · F1 oficial</span>
+        <span id="dataUpdated">—</span>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide</p>
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../equipes/equipes.html">Equipes</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="classificacao.js"></script>
+</body>
+</html>

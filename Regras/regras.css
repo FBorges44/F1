@@ -1,0 +1,748 @@
+/* ============================================================
+   REGRAS — CSS
+   ============================================================ */
+
+.regras-body { background: var(--black); }
+
+/* HERO */
+.rg-hero {
+    padding: 9rem 5% 4rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: end;
+    border-bottom: 1px solid var(--border);
+    min-height: 60vh;
+}
+
+.rg-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    line-height: 0.88;
+    margin: 1rem 0 1.5rem;
+}
+
+.rg-title-outline {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--white);
+}
+
+.rg-hero-content p {
+    color: var(--muted);
+    max-width: 480px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.rg-chapters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-self: end;
+}
+
+.rg-ch {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, padding-left 0.2s;
+}
+.rg-ch:last-child { border-bottom: none; }
+.rg-ch:hover { color: var(--white); padding-left: 0.5rem; }
+
+/* MAIN */
+.rg-main { padding: 0; }
+
+/* SECTION */
+.rg-section {
+    padding: 5rem 5%;
+    border-bottom: 1px solid var(--border);
+}
+
+.rg-section-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.rg-num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+    line-height: 1;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.rg-section-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-top: 0.5rem;
+}
+
+.rg-section-head .section-tag { display: block; margin-bottom: 0.4rem; }
+
+/* ── BANDEIRAS ────────────────────────────────────────────── */
+.flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+}
+
+.flag-card {
+    background: var(--carbon);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: background 0.2s;
+}
+
+.flag-card:hover { background: var(--surface); }
+
+.flag-swatch {
+    width: 56px; height: 36px;
+    flex-shrink: 0;
+    border-radius: 2px;
+}
+
+.flag-checkered {
+    background-image:
+        repeating-conic-gradient(#000 0% 25%, #fff 0% 50%);
+    background-size: 12px 12px;
+}
+
+.flag-info strong {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
+.flag-info span {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* ── PONTUAÇÃO ────────────────────────────────────────────── */
+.pts-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.pts-podium { }
+
+.pts-bar-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 200px;
+}
+
+.pts-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0.8rem;
+    gap: 0.3rem;
+    border-radius: 2px 2px 0 0;
+    transition: opacity 0.3s;
+}
+
+.pts-bar:hover { opacity: 0.85; }
+
+.pts-1st { background: #FFD700; height: 100%; }
+.pts-2nd { background: #C0C0C0; height: 75%; }
+.pts-3rd { background: #CD7F32; height: 62%; }
+
+.pts-bar-val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.7);
+    line-height: 1;
+}
+
+.pts-bar-pos {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: rgba(0,0,0,0.6);
+    text-transform: uppercase;
+}
+
+.pts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+}
+
+.pts-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    transition: background 0.2s;
+}
+
+.pts-row:hover { background: var(--surface); color: var(--white); }
+.pts-row:last-child { border-bottom: none; }
+
+.pts-row strong {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--red);
+}
+
+.pts-special strong { color: var(--accent); }
+
+.pts-note {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.2rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+}
+
+.pn-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.pts-note p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+/* ── PNEUS ────────────────────────────────────────────────── */
+.tire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 2rem;
+}
+
+.tire-card {
+    background: var(--carbon);
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.3s;
+}
+
+.tire-card:hover { background: var(--surface); }
+
+.tire-visual { display: flex; justify-content: center; }
+
+.tire-circle {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tire-circle span {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tire-info strong {
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--white);
+}
+
+.tire-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.tire-info p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+.tire-meter { display: flex; flex-direction: column; gap: 3px; }
+
+.tm-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.tm-bar > div { height: 100%; border-radius: 3px; }
+
+.tire-meter span {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* ── DRS ──────────────────────────────────────────────────── */
+.drs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* DRS Visual - simplified SVG-like car */
+.drs-visual {
+    background: var(--carbon);
+    border: 1px solid var(--border);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.drs-car {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.drs-body {
+    width: 160px; height: 24px;
+    background: linear-gradient(to right, var(--red), #b00);
+    clip-path: polygon(0 30%, 8% 0, 92% 0, 100% 30%, 100% 70%, 92% 100%, 8% 100%, 0 70%);
+    position: relative;
+    z-index: 2;
+}
+
+.drs-wing {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: -4px;
+    z-index: 3;
+}
+
+.wing-top, .wing-bot {
+    width: 32px; height: 8px;
+    background: var(--white);
+    transition: transform 0.5s var(--ease-out);
+}
+
+.wing-top { border-radius: 2px 2px 0 0; }
+.wing-bot { border-radius: 0 0 2px 2px; }
+
+.drs-wing.open .wing-top { transform: translateY(-6px) rotate(-8deg); }
+.drs-wing.open .wing-bot { transform: translateY(6px) rotate(8deg); }
+
+.drs-wheels {
+    display: flex;
+    gap: 80px;
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+}
+
+.drs-wheel {
+    width: 20px; height: 20px;
+    background: #333;
+    border: 3px solid #555;
+    border-radius: 50%;
+}
+
+.drs-toggle-btn {
+    padding: 10px 24px;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.drs-toggle-btn:hover { background: var(--white); color: var(--black); }
+.drs-toggle-btn.active { background: #22c55e; }
+
+.drs-speed-meter {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.dsm-val {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    transition: color 0.4s;
+}
+
+.dsm-unit {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+/* DRS Text */
+.drs-fact {
+    padding: 1.5rem;
+    background: var(--carbon);
+    border: 1px solid var(--border);
+    border-left: 3px solid #22c55e;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.df-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: #22c55e;
+    line-height: 1;
+}
+
+.df-unit {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #22c55e;
+}
+
+.df-desc {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+    flex: 1;
+    margin-left: 0.5rem;
+}
+
+.drs-rules { display: flex; flex-direction: column; gap: 1rem; }
+
+.dr-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--carbon);
+    border: 1px solid var(--border);
+    transition: background 0.2s;
+}
+
+.dr-item:hover { background: var(--surface); }
+
+.dr-icon { font-size: 1.5rem; flex-shrink: 0; }
+.dr-item strong { display: block; font-size: 0.875rem; margin-bottom: 4px; }
+.dr-item p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+/* ── PIT STOP ─────────────────────────────────────────────── */
+.pit-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.pit-stat-big {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    margin-bottom: 1rem;
+}
+
+.psb-val {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.psb-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.pit-stat-list { border: 1px solid var(--border); }
+
+.psl-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+.psl-item:last-child { border-bottom: none; }
+.psl-item strong { color: var(--white); font-family: var(--font-display); font-size: 1.1rem; }
+
+.pit-diagram-title {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.pit-crew-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+}
+
+.pcg-role {
+    background: var(--carbon);
+    padding: 1rem 0.8rem;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.pcg-role:hover { background: var(--surface); }
+
+.pcg-role span {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--pr, var(--red));
+    line-height: 1;
+}
+
+.pcg-role p {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* ── CARRO ────────────────────────────────────────────────── */
+.car-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+}
+
+.csg-item {
+    background: var(--carbon);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.csg-item:hover { background: var(--surface); }
+
+.csg-icon { font-size: 1.8rem; }
+
+.csg-val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+}
+
+.csg-key {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.csg-item p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-top: 0.3rem; }
+
+/* ── FORMATO ──────────────────────────────────────────────── */
+.format-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid var(--border);
+    padding-left: 2rem;
+}
+
+.ft-item { margin-bottom: 2.5rem; }
+
+.ft-day {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--red);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.ft-day::before {
+    content: '';
+    position: absolute;
+    left: -2.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+}
+
+.ft-sessions { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.ft-session {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.fts-time {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    padding-top: 0.8rem;
+    width: 40px;
+}
+
+.fts-content {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    background: var(--carbon);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--border);
+    transition: background 0.2s;
+}
+
+.fts-content:hover { background: var(--surface); }
+
+.fts-content strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
+.fts-content span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+/* ── PENALIDADES ──────────────────────────────────────────── */
+.penalty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+}
+
+.pen-card {
+    background: var(--carbon);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: background 0.3s;
+}
+
+.pen-card:hover { background: var(--surface); }
+
+.pen-icon { font-size: 2rem; }
+
+.pen-card strong {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--white);
+}
+
+.pen-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
+
+.pen-time {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 4px 0;
+    border-top: 1px solid var(--border);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .rg-hero { grid-template-columns: 1fr; gap: 2rem; min-height: auto; padding-top: 8rem; }
+    .rg-chapters { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+    .rg-ch { border-bottom: none; border: 1px solid var(--border); padding: 0.3rem 0.8rem; }
+    .pts-layout { grid-template-columns: 1fr; }
+    .drs-layout { grid-template-columns: 1fr; }
+    .pit-layout { grid-template-columns: 1fr; }
+    .car-specs-grid { grid-template-columns: repeat(2, 1fr); }
+    .penalty-grid { grid-template-columns: repeat(2, 1fr); }
+    .pit-crew-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .flags-grid { grid-template-columns: 1fr; }
+    .tire-grid { grid-template-columns: 1fr; }
+    .car-specs-grid { grid-template-columns: 1fr 1fr; }
+    .penalty-grid { grid-template-columns: 1fr; }
+    .pit-crew-grid { grid-template-columns: repeat(4, 1fr); }
+    .rg-num { font-size: 3rem; }
+}

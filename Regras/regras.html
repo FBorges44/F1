@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras & Técnica | F1 Guide</title>
+    <meta name="description" content="Entenda as regras, bandeiras, DRS, pit stops e toda a técnica da Fórmula 1.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="regras.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="regras-body">
+
+    <div id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">F<span class="logo-accent">1</span></span>
+            <span class="logo-sub">GUIDE</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item">Início</a>
+            <a href="../equipes/equipes.html" class="nav-item">Equipes</a>
+            <a href="../classificacao/classificacao.html" class="nav-item">Classificação</a>
+            <a href="../pilotos/senna.html" class="nav-item">Pilotos</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="rg-hero">
+        <div class="rg-hero-content">
+            <span class="section-tag">FIA Regulamento 2024</span>
+            <h1 class="rg-title">Regras &<br><span class="rg-title-outline">Técnica</span></h1>
+            <p>Do DRS aos pneus, das bandeiras ao Budget Cap — tudo que você precisa saber para entender uma corrida.</p>
+        </div>
+        <div class="rg-chapters">
+            <a href="#bandeiras" class="rg-ch">01 Bandeiras</a>
+            <a href="#pontuacao" class="rg-ch">02 Pontuação</a>
+            <a href="#pneus" class="rg-ch">03 Pneus</a>
+            <a href="#drs" class="rg-ch">04 DRS</a>
+            <a href="#pitstop" class="rg-ch">05 Pit Stop</a>
+            <a href="#carro" class="rg-ch">06 O Carro</a>
+            <a href="#formato" class="rg-ch">07 Formato</a>
+            <a href="#penalidades" class="rg-ch">08 Penalidades</a>
+        </div>
+    </section>
+
+    <main class="rg-main">
+
+        <!-- 01 BANDEIRAS -->
+        <section class="rg-section" id="bandeiras">
+            <div class="rg-section-head">
+                <span class="rg-num">01</span>
+                <div>
+                    <span class="section-tag">Comunicação na pista</span>
+                    <h2>As Bandeiras</h2>
+                </div>
+            </div>
+            <div class="flags-grid">
+                <div class="flag-card">
+                    <div class="flag-swatch flag-checkered"></div>
+                    <div class="flag-info">
+                        <strong>Bandeira Quadriculada</strong>
+                        <span>Fim da corrida ou sessão. Quem cruza a linha primeiro vence.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch" style="background:#e10600"></div>
+                    <div class="flag-info">
+                        <strong>Bandeira Vermelha</strong>
+                        <span>Corrida interrompida. Todos os pilotos devem reduzir a velocidade imediatamente.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch" style="background:#f5c518"></div>
+                    <div class="flag-info">
+                        <strong>Bandeira Amarela</strong>
+                        <span>Perigo na pista. Ultrapassagens proibidas. Reduza a velocidade.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch" style="background:#22c55e"></div>
+                    <div class="flag-info">
+                        <strong>Bandeira Verde</strong>
+                        <span>Via livre. Perigo encerrado. Corrida retomada normalmente.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch" style="background:#1e40af"></div>
+                    <div class="flag-info">
+                        <strong>Bandeira Azul</strong>
+                        <span>Você está sendo dobrado. Dê passagem ao piloto que aproxima.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch flag-striped" style="background:linear-gradient(45deg,#f97316 50%,#ffffff 50%)"></div>
+                    <div class="flag-info">
+                        <strong>Laranja com faixa preta</strong>
+                        <span>Defeito mecânico perigoso. Piloto deve entrar imediatamente nos boxes.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch" style="background:linear-gradient(180deg,#000 50%,#fff 50%)"></div>
+                    <div class="flag-info">
+                        <strong>Preta e branca</strong>
+                        <span>Aviso por comportamento antidesportivo. Segunda vez = bandeira preta.</span>
+                    </div>
+                </div>
+                <div class="flag-card">
+                    <div class="flag-swatch" style="background:#000"></div>
+                    <div class="flag-info">
+                        <strong>Bandeira Preta</strong>
+                        <span>Desqualificação. O piloto deve entrar nos boxes imediatamente.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 PONTUAÇÃO -->
+        <section class="rg-section" id="pontuacao">
+            <div class="rg-section-head">
+                <span class="rg-num">02</span>
+                <div>
+                    <span class="section-tag">Campeonato</span>
+                    <h2>Sistema de Pontuação</h2>
+                </div>
+            </div>
+            <div class="pts-layout">
+                <div class="pts-podium">
+                    <div class="pts-bar-wrap">
+                        <div class="pts-bar pts-2nd">
+                            <span class="pts-bar-val">18</span>
+                            <span class="pts-bar-pos">2°</span>
+                        </div>
+                        <div class="pts-bar pts-1st">
+                            <span class="pts-bar-val">25</span>
+                            <span class="pts-bar-pos">1°</span>
+                        </div>
+                        <div class="pts-bar pts-3rd">
+                            <span class="pts-bar-val">15</span>
+                            <span class="pts-bar-pos">3°</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pts-list">
+                    <div class="pts-row"><span>4° lugar</span><strong>12 pts</strong></div>
+                    <div class="pts-row"><span>5° lugar</span><strong>10 pts</strong></div>
+                    <div class="pts-row"><span>6° lugar</span><strong>8 pts</strong></div>
+                    <div class="pts-row"><span>7° lugar</span><strong>6 pts</strong></div>
+                    <div class="pts-row"><span>8° lugar</span><strong>4 pts</strong></div>
+                    <div class="pts-row"><span>9° lugar</span><strong>2 pts</strong></div>
+                    <div class="pts-row"><span>10° lugar</span><strong>1 pt</strong></div>
+                    <div class="pts-row pts-special"><span>🏎️ Volta mais rápida (Top 10)</span><strong>+1 pt</strong></div>
+                    <div class="pts-row pts-special"><span>🏁 Pole position (Sprint)</span><strong>Pts extras</strong></div>
+                </div>
+            </div>
+            <div class="pts-note">
+                <span class="pn-icon">ℹ️</span>
+                <p>O campeonato de construtores soma os pontos dos dois pilotos de cada equipe em cada corrida. O piloto com mais pontos no final da temporada é campeão mundial.</p>
+            </div>
+        </section>
+
+        <!-- 03 PNEUS -->
+        <section class="rg-section" id="pneus">
+            <div class="rg-section-head">
+                <span class="rg-num">03</span>
+                <div>
+                    <span class="section-tag">Pirelli P Zero</span>
+                    <h2>Compostos de Pneus</h2>
+                </div>
+            </div>
+            <div class="tire-grid">
+                <div class="tire-card" style="--tc:#e10600">
+                    <div class="tire-visual">
+                        <div class="tire-circle" style="border-color:#e10600">
+                            <span style="color:#e10600">S</span>
+                        </div>
+                    </div>
+                    <div class="tire-info">
+                        <strong>Macio (Soft)</strong>
+                        <span class="tire-tag" style="background:rgba(225,6,0,0.15);color:#e10600">Mais rápido</span>
+                        <p>Máxima aderência, degrada rápido. Ideal para qualificação e corridas curtas. Vida útil: 15–25 voltas.</p>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:90%;background:#e10600"></div></div>
+                            <span>Velocidade</span>
+                        </div>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:25%;background:#e10600"></div></div>
+                            <span>Durabilidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-card" style="--tc:#f5c518">
+                    <div class="tire-visual">
+                        <div class="tire-circle" style="border-color:#f5c518">
+                            <span style="color:#f5c518">M</span>
+                        </div>
+                    </div>
+                    <div class="tire-info">
+                        <strong>Médio (Medium)</strong>
+                        <span class="tire-tag" style="background:rgba(245,197,24,0.15);color:#f5c518">Equilíbrio</span>
+                        <p>O composto mais versátil. Equilíbrio entre velocidade e duração. Muito usado em estratégias de 1 parada. Vida útil: 25–35 voltas.</p>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:65%;background:#f5c518"></div></div>
+                            <span>Velocidade</span>
+                        </div>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:60%;background:#f5c518"></div></div>
+                            <span>Durabilidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-card" style="--tc:#ffffff">
+                    <div class="tire-visual">
+                        <div class="tire-circle" style="border-color:#ffffff">
+                            <span style="color:#ffffff">H</span>
+                        </div>
+                    </div>
+                    <div class="tire-info">
+                        <strong>Duro (Hard)</strong>
+                        <span class="tire-tag" style="background:rgba(255,255,255,0.1);color:#fff">Mais durável</span>
+                        <p>Mais lento mas dura muito mais. Estratégia de longo alcance. Perde pouco desempenho ao longo da corrida. Vida útil: 40–50 voltas.</p>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:40%;background:#fff"></div></div>
+                            <span>Velocidade</span>
+                        </div>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:90%;background:#fff"></div></div>
+                            <span>Durabilidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-card" style="--tc:#22c55e">
+                    <div class="tire-visual">
+                        <div class="tire-circle" style="border-color:#22c55e;border-style:dashed">
+                            <span style="color:#22c55e">I</span>
+                        </div>
+                    </div>
+                    <div class="tire-info">
+                        <strong>Intermediário</strong>
+                        <span class="tire-tag" style="background:rgba(34,197,94,0.15);color:#22c55e">Pista molhada</span>
+                        <p>Para chuva leve ou pista parcialmente molhada. Drenagem de 25 litros de água por segundo a 300 km/h.</p>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:55%;background:#22c55e"></div></div>
+                            <span>Velocidade</span>
+                        </div>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:50%;background:#22c55e"></div></div>
+                            <span>Durabilidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-card" style="--tc:#3b82f6">
+                    <div class="tire-visual">
+                        <div class="tire-circle" style="border-color:#3b82f6;border-style:dashed">
+                            <span style="color:#3b82f6">W</span>
+                        </div>
+                    </div>
+                    <div class="tire-info">
+                        <strong>Chuva (Wet)</strong>
+                        <span class="tire-tag" style="background:rgba(59,130,246,0.15);color:#3b82f6">Chuva intensa</span>
+                        <p>Para condições de chuva forte. Drenagem de 65 litros por segundo. Corridas memoráveis — Mônaco 1984, Spa 1998.</p>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:30%;background:#3b82f6"></div></div>
+                            <span>Velocidade</span>
+                        </div>
+                        <div class="tire-meter">
+                            <div class="tm-bar"><div style="width:40%;background:#3b82f6"></div></div>
+                            <span>Durabilidade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pts-note">
+                <span class="pn-icon">⚡</span>
+                <p>Regra obrigatória: em corridas secas, cada piloto deve usar pelo menos dois compostos de pneus diferentes durante a corrida.</p>
+            </div>
+        </section>
+
+        <!-- 04 DRS -->
+        <section class="rg-section" id="drs">
+            <div class="rg-section-head">
+                <span class="rg-num">04</span>
+                <div>
+                    <span class="section-tag">Drag Reduction System</span>
+                    <h2>O que é DRS?</h2>
+                </div>
+            </div>
+            <div class="drs-layout">
+                <div class="drs-visual">
+                    <div class="drs-car">
+                        <div class="drs-wing closed" id="drsWing">
+                            <div class="wing-top"></div>
+                            <div class="wing-bot"></div>
+                        </div>
+                        <div class="drs-body"></div>
+                        <div class="drs-wheels">
+                            <div class="drs-wheel"></div>
+                            <div class="drs-wheel"></div>
+                        </div>
+                    </div>
+                    <div class="drs-label-wrap">
+                        <button class="drs-toggle-btn" id="drsToggle">
+                            <span id="drsStatus">▶ ATIVAR DRS</span>
+                        </button>
+                    </div>
+                    <div class="drs-speed-meter">
+                        <span class="dsm-val" id="drsSpeedVal">320</span>
+                        <span class="dsm-unit">km/h</span>
+                    </div>
+                </div>
+                <div class="drs-text">
+                    <div class="drs-fact">
+                        <span class="df-num">+10–12</span>
+                        <span class="df-unit">km/h</span>
+                        <span class="df-desc">de velocidade máxima com DRS ativo</span>
+                    </div>
+                    <div class="drs-rules">
+                        <div class="dr-item">
+                            <span class="dr-icon">📏</span>
+                            <div>
+                                <strong>Ativação</strong>
+                                <p>Só pode ser ativado em zonas pré-determinadas (DRS zones). O piloto de trás deve estar a menos de 1 segundo do da frente após a linha de detecção.</p>
+                            </div>
+                        </div>
+                        <div class="dr-item">
+                            <span class="dr-icon">🔧</span>
+                            <div>
+                                <strong>Funcionamento</strong>
+                                <p>O flap traseiro da asa abre, reduzindo o arrasto aerodinâmico em ~10%. O carro ganha velocidade de ponta mas perde downforce — freagem mais longa.</p>
+                            </div>
+                        </div>
+                        <div class="dr-item">
+                            <span class="dr-icon">⚠️</span>
+                            <div>
+                                <strong>Restrições</strong>
+                                <p>Proibido na volta de aquecimento, primeira volta e durante Safety Car. Em chuva, os comissários podem desativar o DRS por segurança.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 PIT STOP -->
+        <section class="rg-section" id="pitstop">
+            <div class="rg-section-head">
+                <span class="rg-num">05</span>
+                <div>
+                    <span class="section-tag">Estratégia</span>
+                    <h2>Pit Stop</h2>
+                </div>
+            </div>
+            <div class="pit-layout">
+                <div class="pit-stats">
+                    <div class="pit-stat-big">
+                        <span class="psb-val">1.82s</span>
+                        <span class="psb-label">Recorde mundial de pit stop (Red Bull · 2019)</span>
+                    </div>
+                    <div class="pit-stat-list">
+                        <div class="psl-item">
+                            <span>Pit stop médio (2024)</span>
+                            <strong>~2.5s</strong>
+                        </div>
+                        <div class="psl-item">
+                            <span>Pilotos na equipe de pit</span>
+                            <strong>20+</strong>
+                        </div>
+                        <div class="psl-item">
+                            <span>Tempo perdido no pit lane</span>
+                            <strong>~20s</strong>
+                        </div>
+                        <div class="psl-item">
+                            <span>Temperatura dos freios ao entrar</span>
+                            <strong>~800°C</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="pit-crew-diagram">
+                    <div class="pit-diagram-title">OS 20 MECÂNICOS DO PIT STOP</div>
+                    <div class="pit-crew-grid">
+                        <div class="pcg-role" style="--pr:#e10600"><span>2</span><p>Macaco dianteiro</p></div>
+                        <div class="pcg-role" style="--pr:#f5c518"><span>2</span><p>Macaco traseiro</p></div>
+                        <div class="pcg-role" style="--pr:#3b82f6"><span>4</span><p>Pistola pneumática</p></div>
+                        <div class="pcg-role" style="--pr:#22c55e"><span>4</span><p>Pneu novo</p></div>
+                        <div class="pcg-role" style="--pr:#a855f7"><span>4</span><p>Pneu removido</p></div>
+                        <div class="pcg-role" style="--pr:#f97316"><span>1</span><p>Sinaleiro frente</p></div>
+                        <div class="pcg-role" style="--pr:#ec4899"><span>1</span><p>Sinaleiro atrás</p></div>
+                        <div class="pcg-role" style="--pr:#06b6d4"><span>2</span><p>Asa dianteira / limpeza</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 O CARRO -->
+        <section class="rg-section" id="carro">
+            <div class="rg-section-head">
+                <span class="rg-num">06</span>
+                <div>
+                    <span class="section-tag">Engenharia</span>
+                    <h2>O Carro de F1</h2>
+                </div>
+            </div>
+            <div class="car-specs-grid">
+                <div class="csg-item">
+                    <span class="csg-icon">⚖️</span>
+                    <span class="csg-val">798 kg</span>
+                    <span class="csg-key">Peso mínimo (com piloto)</span>
+                    <p>Um carro de F1 pesa menos que 3 adultos médios. Cada grama conta.</p>
+                </div>
+                <div class="csg-item">
+                    <span class="csg-icon">⚡</span>
+                    <span class="csg-val">~1000 cv</span>
+                    <span class="csg-key">Potência total (motor + MGU-K)</span>
+                    <p>O motor V6 1.6L turbo híbrido entrega mais potência que um V12 aspirado dos anos 90.</p>
+                </div>
+                <div class="csg-item">
+                    <span class="csg-icon">🚀</span>
+                    <span class="csg-val">0–100 km/h</span>
+                    <span class="csg-key">em menos de 2.5 segundos</span>
+                    <p>E freia de 300 para 0 em menos de 4 segundos. Forças de até 5G.</p>
+                </div>
+                <div class="csg-item">
+                    <span class="csg-icon">🌪️</span>
+                    <span class="csg-val">3.5× peso</span>
+                    <span class="csg-key">Downforce gerado</span>
+                    <p>A 200 km/h, o carro gera força suficiente para andar de cabeça para baixo em um túnel.</p>
+                </div>
+                <div class="csg-item">
+                    <span class="csg-icon">🌡️</span>
+                    <span class="csg-val">1.000°C</span>
+                    <span class="csg-key">Temperatura nos freios</span>
+                    <p>Os discos de carbono ficam incandescentes durante as frenagens. Visíveis a olho nu à noite.</p>
+                </div>
+                <div class="csg-item">
+                    <span class="csg-icon">💰</span>
+                    <span class="csg-val">$135M</span>
+                    <span class="csg-key">Budget Cap por temporada (2024)</span>
+                    <p>Limite de gastos introduzido em 2021 para nivelar o campo de batalha.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 FORMATO -->
+        <section class="rg-section" id="formato">
+            <div class="rg-section-head">
+                <span class="rg-num">07</span>
+                <div>
+                    <span class="section-tag">Fim de semana</span>
+                    <h2>Formato de um GP</h2>
+                </div>
+            </div>
+            <div class="format-timeline">
+                <div class="ft-item">
+                    <div class="ft-day">QUI</div>
+                    <div class="ft-sessions">
+                        <div class="ft-session">
+                            <span class="fts-time">Tarde</span>
+                            <div class="fts-content">
+                                <strong>Conferência de imprensa</strong>
+                                <span>Pilotos e chefes falam com a mídia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft-item">
+                    <div class="ft-day">SEX</div>
+                    <div class="ft-sessions">
+                        <div class="ft-session">
+                            <span class="fts-time">13h</span>
+                            <div class="fts-content" style="border-color:#22c55e">
+                                <strong>Treino Livre 1 (TL1)</strong>
+                                <span>60 minutos · Ajuste inicial de setup</span>
+                            </div>
+                        </div>
+                        <div class="ft-session">
+                            <span class="fts-time">17h</span>
+                            <div class="fts-content" style="border-color:#22c55e">
+                                <strong>Treino Livre 2 (TL2)</strong>
+                                <span>60 minutos · Simulação de corrida e longas sequências</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft-item">
+                    <div class="ft-day">SAB</div>
+                    <div class="ft-sessions">
+                        <div class="ft-session">
+                            <span class="fts-time">13h</span>
+                            <div class="fts-content" style="border-color:#22c55e">
+                                <strong>Treino Livre 3 (TL3)</strong>
+                                <span>60 minutos · Última preparação</span>
+                            </div>
+                        </div>
+                        <div class="ft-session">
+                            <span class="fts-time">17h</span>
+                            <div class="fts-content" style="border-color:#f5c518">
+                                <strong>Classificação (Q1/Q2/Q3)</strong>
+                                <span>Elimina pilotos progressivamente. Q3 define pole position</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft-item">
+                    <div class="ft-day">DOM</div>
+                    <div class="ft-sessions">
+                        <div class="ft-session">
+                            <span class="fts-time">15h</span>
+                            <div class="fts-content" style="border-color:#e10600">
+                                <strong>🏁 Grande Prêmio</strong>
+                                <span>~305 km ou 2 horas. A batalha pelo título.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 PENALIDADES -->
+        <section class="rg-section" id="penalidades">
+            <div class="rg-section-head">
+                <span class="rg-num">08</span>
+                <div>
+                    <span class="section-tag">FIA</span>
+                    <h2>Penalidades</h2>
+                </div>
+            </div>
+            <div class="penalty-grid">
+                <div class="pen-card">
+                    <div class="pen-icon">⏱️</div>
+                    <strong>Drive-Through</strong>
+                    <p>O piloto entra no pit lane sem parar e volta para a corrida. Geralmente por falsa largada ou unsafe release.</p>
+                    <span class="pen-time">~20s perdidos</span>
+                </div>
+                <div class="pen-card">
+                    <div class="pen-icon">⏸️</div>
+                    <strong>Stop & Go (10s)</strong>
+                    <p>Entra no pit lane, para por 10 segundos e volta. Penalidade mais severa que o drive-through.</p>
+                    <span class="pen-time">~30s perdidos</span>
+                </div>
+                <div class="pen-card">
+                    <div class="pen-icon">🕐</div>
+                    <strong>Tempo adicionado</strong>
+                    <p>5s ou 10s adicionados ao tempo final. Não exige parada — mais comum por colisão ou cutting.</p>
+                    <span class="pen-time">+5s ou +10s</span>
+                </div>
+                <div class="pen-card">
+                    <div class="pen-icon">📉</div>
+                    <strong>Grid drop</strong>
+                    <p>Largada mais atrás na próxima corrida. Comum por troca de componentes acima do limite permitido.</p>
+                    <span class="pen-time">-3, -5 ou -10 posições</span>
+                </div>
+                <div class="pen-card">
+                    <div class="pen-icon">🏳️</div>
+                    <strong>Desqualificação (DSQ)</strong>
+                    <p>Resultado anulado completamente. Por fraude técnica, irregularidade no carro ou comportamento grave.</p>
+                    <span class="pen-time">0 pontos na corrida</span>
+                </div>
+                <div class="pen-card">
+                    <div class="pen-icon">⚫</div>
+                    <strong>Pontos de penalidade</strong>
+                    <p>Sistema de acúmulo (1–3 pts). Ao atingir 12 pontos em 12 meses → suspensão de 1 corrida.</p>
+                    <span class="pen-time">Licença em risco</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide</p>
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../equipes/equipes.html">Equipes</a>
+                <a href="../classificacao/classificacao.html">Classificação</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="regras.js"></script>
+</body>
+</html>

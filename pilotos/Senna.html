@@ -3,10 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilotos</title>
+    <title>Ayrton Senna | F1 Guide</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="senna.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body>
-    
-    
+<body class="senna-body">
+
+    <div id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">F<span class="logo-accent">1</span></span>
+            <span class="logo-sub">GUIDE</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item">Início</a>
+            <a href="../historia/historia.html" class="nav-item">História</a>
+            <a href="../menu/menu.html" class="nav-item">Menu</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Senna -->
+    <section class="senna-hero">
+        <div class="senna-hero-bg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Ayrton_Senna_1991_Canada.jpg/800px-Ayrton_Senna_1991_Canada.jpg" alt="Ayrton Senna" class="senna-hero-img">
+            <div class="senna-overlay"></div>
+        </div>
+
+        <div class="senna-hero-content">
+            <div class="pilot-meta">
+                <span class="section-tag">Piloto — McLaren Honda</span>
+                <div class="pilot-number">#12</div>
+            </div>
+            <h1 class="senna-title">
+                <span>AYRTON</span>
+                <span class="title-outline">SENNA</span>
+            </h1>
+            <p class="senna-sub">São Paulo, BR — 1960 – 1994</p>
+        </div>
+
+        <div class="senna-hero-stats">
+            <div class="sh-stat">
+                <span class="sh-num" data-target="3">0</span>
+                <span class="sh-label">Títulos</span>
+            </div>
+            <div class="sh-stat">
+                <span class="sh-num" data-target="41">0</span>
+                <span class="sh-label">Vitórias</span>
+            </div>
+            <div class="sh-stat">
+                <span class="sh-num" data-target="65">0</span>
+                <span class="sh-label">Poles</span>
+            </div>
+            <div class="sh-stat">
+                <span class="sh-num" data-target="614">0</span>
+                <span class="sh-label">Pontos F1</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="senna-main">
+
+        <!-- Bio Section -->
+        <section class="senna-bio">
+            <div class="bio-text">
+                <span class="section-tag">Biografia</span>
+                <h2>O Homem. O Mito. A Lenda.</h2>
+                <p>Ayrton Senna da Silva nasceu em São Paulo em 21 de março de 1960. Desde criança, demonstrou uma ligação quase espiritual com o automobilismo. Ao chegar à Fórmula 1 em 1984, ficou imediatamente claro que o mundo estava diante de algo extraordinário.</p>
+                <p>Senna não era apenas rápido — ele redefiniu os limites do possível. Sua qualificação no GP de Mônaco de 1984 na chuva ainda é reverenciada como a maior volta da história da F1. Seus reflexos sobre-humanos, sua concentração absoluta e sua coragem irracional criaram uma aura mítica em volta de seu nome.</p>
+                <p>Em 1 de maio de 1994, em Imola, o mundo perdeu seu maior ídolo. Mas Senna vive — em cada curva tomada no limite, em cada piloto brasileiro que sobe num kart pela primeira vez.</p>
+            </div>
+            <div class="bio-timeline">
+                <div class="btl-item">
+                    <span class="btl-year">1984</span>
+                    <div class="btl-dot"></div>
+                    <span class="btl-event">Estreia na F1 pela Toleman</span>
+                </div>
+                <div class="btl-item">
+                    <span class="btl-year">1985</span>
+                    <div class="btl-dot"></div>
+                    <span class="btl-event">Primeira vitória em Portugal (Lotus)</span>
+                </div>
+                <div class="btl-item">
+                    <span class="btl-year">1988</span>
+                    <div class="btl-dot"></div>
+                    <span class="btl-event">1º Título Mundial com a McLaren</span>
+                </div>
+                <div class="btl-item">
+                    <span class="btl-year">1990</span>
+                    <div class="btl-dot"></div>
+                    <span class="btl-event">2º Título — A guerra com Prost</span>
+                </div>
+                <div class="btl-item">
+                    <span class="btl-year">1991</span>
+                    <div class="btl-dot"></div>
+                    <span class="btl-event">3º Título — O pico de Senna</span>
+                </div>
+                <div class="btl-item btl-item--last">
+                    <span class="btl-year">1994</span>
+                    <div class="btl-dot btl-dot--red"></div>
+                    <span class="btl-event">Imola — O adeus do mito</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <section class="senna-quote">
+            <div class="sq-bar"></div>
+            <blockquote>
+                <p>"Onde quer que você vá, não importa o que for, o limite é sempre o ponto de partida."</p>
+                <cite>— Ayrton Senna</cite>
+            </blockquote>
+        </section>
+
+        <!-- Mônaco -->
+        <section class="senna-monaco">
+            <div class="monaco-text">
+                <span class="section-tag">GP Mônaco 1984</span>
+                <h2>A Volta mais Rápida<br>da História</h2>
+                <p>Era uma tarde chuvosa em Mônaco. Senna, ainda pilotando pela Toleman — equipe modesta —, estava a 7 segundos atrás de Alain Prost quando a corrida foi encerrada prematuramente. Ele estava <strong>ganhando mais de 2 segundos por volta</strong> no líder.</p>
+                <p>Niki Lauda, lendário piloto e analista, disse: <em>"Senna não estava dirigindo o carro. Estava carregando-o."</em></p>
+                <div class="monaco-numbers">
+                    <div class="mn-item">
+                        <strong>+7s</strong>
+                        <span>Atrás de Prost na largada</span>
+                    </div>
+                    <div class="mn-item">
+                        <strong>2s/volta</strong>
+                        <span>Mais rápido que o líder</span>
+                    </div>
+                    <div class="mn-item">
+                        <strong>1984</strong>
+                        <span>Toleman — 1º ano</span>
+                    </div>
+                </div>
+            </div>
+            <div class="monaco-img">
+                <img src="https://www.formula1.com/content/dam/fom-website/drivers/A/AYRSENN01_Ayrton_Senna/ayrsenn01.png.transform/3col-retina/image.png" alt="Senna Monaco" onerror="this.style.display='none'">
+                <div class="monaco-badge">
+                    <span>MÔNACO</span>
+                    <span class="mb-year">1984</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide — Do asfalto para a eternidade</p>
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../menu/menu.html">Menu</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>

@@ -1,0 +1,488 @@
+/* ============================================================
+   EQUIPES — Design Editorial Pit Wall
+   ============================================================ */
+
+.equipes-body { background: var(--black); }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.eq-hero {
+    height: 80vh;
+    min-height: 560px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.eq-hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.eq-hero-inner {
+    padding: 0 5%;
+    position: relative;
+    z-index: 2;
+}
+
+.eq-hero-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.label-line {
+    height: 1px;
+    width: 60px;
+    background: var(--border);
+}
+
+.eq-hero-label span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.eq-hero-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.82;
+    margin-bottom: 2rem;
+}
+
+.eq-t1 {
+    display: block;
+    font-size: clamp(4rem, 10vw, 9rem);
+    letter-spacing: -2px;
+    color: var(--white);
+    animation: slideInLeft 0.9s var(--ease-out) both;
+}
+
+.eq-t2 {
+    display: block;
+    font-size: clamp(5rem, 14vw, 13rem);
+    letter-spacing: -4px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+    animation: slideInLeft 0.9s var(--ease-out) 0.1s both;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.eq-hero-sub {
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    animation: fadeUp 0.9s var(--ease-out) 0.3s both;
+}
+
+/* Color strip */
+.color-strip {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    display: flex;
+}
+
+.color-strip div { transition: flex 0.4s; }
+
+/* ── TEAM NAV ─────────────────────────────────────────────── */
+.team-nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,8,8,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.team-nav-wrap::-webkit-scrollbar { display: none; }
+
+.team-nav {
+    display: flex;
+    padding: 0 5%;
+    gap: 0;
+    min-width: max-content;
+}
+
+.tn-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1.1rem 1.4rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    white-space: nowrap;
+    margin-bottom: -1px;
+}
+
+.tn-btn:hover { color: var(--white); }
+
+.tn-btn.active {
+    color: var(--white);
+    border-bottom-color: var(--active-color, var(--red));
+}
+
+.tn-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.tn-btn:hover .tn-dot,
+.tn-btn.active .tn-dot { transform: scale(1.5); }
+
+/* ── MAIN ─────────────────────────────────────────────────── */
+.eq-main {
+    padding: 0;
+}
+
+/* ── TEAM PANEL ───────────────────────────────────────────── */
+.team-panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 80vh;
+    border-bottom: 1px solid var(--border);
+    animation: panelIn 0.45s var(--ease-out) both;
+}
+
+.team-panel.active {
+    display: grid;
+}
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* LEFT column */
+.tp-left {
+    padding: 4rem 5%;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative number background */
+.tp-number {
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    font-family: var(--font-display);
+    font-size: 12rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.tp-identity { position: relative; }
+
+.tp-code {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.tp-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 0.9;
+    color: var(--white);
+}
+
+.tp-origin {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Accolade badge */
+.tp-accolade {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid;
+    padding: 0.8rem 1.2rem;
+    align-self: flex-start;
+}
+
+.tp-acc-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tp-acc-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* Bio */
+.tp-bio {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    border-left: 2px solid var(--border);
+    padding-left: 1.2rem;
+}
+
+/* Drivers */
+.tp-drivers-title {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: -0.5rem;
+}
+
+.tp-drivers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tp-driver {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left 0.25s;
+}
+
+.tp-driver:hover { padding-left: 0.5rem; }
+.tp-driver:last-child { border-bottom: none; }
+
+.tpd-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--dc, var(--white));
+    width: 48px;
+    text-align: right;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.tp-driver > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tp-driver strong {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.tp-driver span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* RIGHT column */
+.tp-right {
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    background: var(--carbon);
+}
+
+/* Stats grid */
+.tp-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+}
+
+.tpsg-item {
+    background: var(--surface);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: background 0.2s;
+}
+
+.tpsg-item:hover { background: var(--surface-2); }
+
+.tpsg-val {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tpsg-key {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Tech specs */
+.tp-tech-title {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.tp-tech-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+}
+
+.tpt-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tpt-row:last-child { border-bottom: none; }
+
+.tpt-row span:first-child {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.tpt-row span:last-child {
+    color: var(--white);
+    font-family: var(--font-ui);
+}
+
+/* History bar */
+.tp-bar-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.tp-history-bar {
+    height: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+}
+
+.thb-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    transition: width 1.2s var(--ease-out);
+    min-width: fit-content;
+}
+
+.thb-fill span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: rgba(8,8,8,0.8);
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .tpt-row { grid-template-columns: 120px 1fr; }
+}
+
+@media (max-width: 900px) {
+    .team-panel.active {
+        grid-template-columns: 1fr;
+    }
+
+    .tp-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 3rem 5%;
+    }
+
+    .tp-right { padding: 3rem 5%; }
+
+    .tp-number { font-size: 7rem; bottom: -1rem; right: 0; }
+
+    .eq-hero { height: auto; min-height: 60vh; padding: 8rem 0 3rem; }
+    .eq-hero-inner { padding: 0 5%; }
+
+    .tn-btn { padding: 0.9rem 1rem; font-size: 0.6rem; }
+}
+
+@media (max-width: 600px) {
+    .tp-stats-grid { grid-template-columns: 1fr 1fr; }
+    .tpsg-val { font-size: 2rem; }
+    .tpt-row { grid-template-columns: 100px 1fr; font-size: 0.75rem; }
+    .tp-accolade { flex-wrap: wrap; }
+    .eq-t1 { font-size: 3.5rem; }
+    .eq-t2 { font-size: 5rem; }
+}

@@ -3,63 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | F1 Guide</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Dashboard | F1 Guide</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,900;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body class="menu-body">
-    <header class="cabecalho">
-        <div class="cabecalho-esquerdo">
-            <img src="/imagens/f1_logo.png" alt="Logo F1">
-        </div>
-        <nav class="cabecalho-direito">
-            <a href="/pilotos/Senna.html">Pilotos</a>
-            <a href="/Equipes/#">Equipes</a>
-            <a href="/Campenatos/#">Campeonato</a>
-            <a href="/Regras/#">Regras</a>
-            <a href="/Pneus/#">Pneus</a>
-        </nav>
-    </header>
 
-    <main class="main-container">
-        <header class="titulo-sessao">
-            <h1>Dashboard Fórmula 1</h1>
-            <p>Selecione uma categoria para explorar os detalhes técnicos</p>
-        </header>
-    
-        <div class="card-principal">
-            <div class="card-f1">
-                <div class="card-icon">🏎️</div>
-                <h3>Pilotos</h3>
-                <p>Os gladiadores do asfalto e suas estatísticas.</p>
-                <a href="/pilotos/Senna.html" class="btn-card">Explorar</a>
-            </div>
-      
-            <div class="card-f1">
-                <div class="card-icon">🛠️</div>
-                <h3>Equipes</h3>
-                <p>A engenharia por trás das máquinas de 1000cv.</p>
-                <a href="#" class="btn-card">Explorar</a>
-            </div> 
-      
-            <div class="card-f1">
-                <div class="card-icon">🏁</div>
-                <h3>Regras</h3>
-                <p>Bandeiras, punições e o regulamento da FIA.</p>
-                <a href="#" class="btn-card">Explorar</a>
-            </div>
-      
-            <div class="card-f1">
-                <div class="card-icon">⭕</div>
-                <h3>Pneus</h3>
-                <p>Compostos macios, médios, duros e de chuva.</p>
-                <a href="#" class="btn-card">Explorar</a>
-            </div>
+    <div id="scrollProgress"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">F<span class="logo-accent">1</span></span>
+            <span class="logo-sub">GUIDE</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-item">Início</a>
+            <a href="../historia/historia.html" class="nav-item">História</a>
+            <a href="../pilotos/senna.html" class="nav-item">Pilotos</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main class="menu-main">
+        <div class="menu-header">
+            <span class="section-tag">Dashboard</span>
+            <h1>Universo F1</h1>
+            <p>Selecione uma categoria para explorar</p>
+        </div>
+
+        <div class="menu-grid">
+
+            <a href="../classificacao/classificacao.html" class="menu-card menu-card--large" data-index="1">
+                <div class="mc-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Ayrton_Senna_1991_Canada.jpg/800px-Ayrton_Senna_1991_Canada.jpg')"></div>
+                <div class="mc-overlay"></div>
+                <div class="mc-content">
+                    <span class="mc-tag">01</span>
+                    <div class="mc-icon">🏆</div>
+                    <h3>Pilotos</h3>
+                    <p>Os gladiadores do asfalto e suas estatísticas históricas.</p>
+                    <span class="mc-cta">Explorar →</span>
+                </div>
+            </a>
+
+            <a href="../historia/historia.html" class="menu-card" data-index="2">
+                <div class="mc-bg" style="background-image: url('https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2020/10/29/fangio-maserati-monaco.jpg')"></div>
+                <div class="mc-overlay"></div>
+                <div class="mc-content">
+                    <span class="mc-tag">02</span>
+                    <div class="mc-icon">📖</div>
+                    <h3>História</h3>
+                    <p>74 anos de evolução, lendas e velocidade.</p>
+                    <span class="mc-cta">Explorar →</span>
+                </div>
+            </a>
+
+            <a href="../equipes/equipes.html" class="menu-card" data-index="3">
+                <div class="mc-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ferrari_SF-24_2024_Bahrain_GP.jpg/1200px-Ferrari_SF-24_2024_Bahrain_GP.jpg')"></div>
+                <div class="mc-overlay"></div>
+                <div class="mc-content">
+                    <span class="mc-tag">03</span>
+                    <div class="mc-icon">🔧</div>
+                    <h3>Equipes</h3>
+                    <p>A engenharia por trás das máquinas de 1000cv.</p>
+                    <span class="mc-cta">Explorar →</span>
+                </div>
+            </a>
+
+            <a href="#" class="menu-card" data-index="4">
+                <div class="mc-overlay"></div>
+                <div class="mc-content">
+                    <span class="mc-tag">04</span>
+                    <div class="mc-icon">🏁</div>
+                    <h3>Regras</h3>
+                    <p>Bandeiras, punições e o regulamento da FIA.</p>
+                    <span class="mc-cta">Em breve →</span>
+                </div>
+                <div class="mc-soon">EM BREVE</div>
+            </a>
+
+            <a href="#" class="menu-card" data-index="5">
+                <div class="mc-overlay"></div>
+                <div class="mc-content">
+                    <span class="mc-tag">05</span>
+                    <div class="mc-icon">⭕</div>
+                    <h3>Pneus</h3>
+                    <p>Compostos macios, médios, duros e de chuva.</p>
+                    <span class="mc-cta">Em breve →</span>
+                </div>
+                <div class="mc-soon">EM BREVE</div>
+            </a>
+
+            <a href="#" class="menu-card" data-index="6">
+                <div class="mc-overlay"></div>
+                <div class="mc-content">
+                    <span class="mc-tag">06</span>
+                    <div class="mc-icon">📅</div>
+                    <h3>Calendário</h3>
+                    <p>Todos os Grandes Prêmios da temporada 2026.</p>
+                    <span class="mc-cta">Em breve →</span>
+                </div>
+                <div class="mc-soon">EM BREVE</div>
+            </a>
+
         </div>
     </main>
 
-    <footer>
-        <p>© 2026 Fórmula One Guide | Status do Sistema: Online</p>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text">F<span class="logo-accent">1</span></span>
+                <span class="logo-sub">GUIDE</span>
+            </div>
+            <p class="footer-copy">© 2026 Fórmula One Guide — Status do Sistema: Online</p>
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../historia/historia.html">História</a>
+            </div>
+        </div>
     </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>
