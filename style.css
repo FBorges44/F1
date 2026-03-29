@@ -1,0 +1,160 @@
+:root {
+    --f1-red: #e10600;
+    --dark-carbon: #15151e;
+    --silver: #949498;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-carbon);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: url('https://64.media.tumblr.com/07321ce7fe49520548fd63d4b057b62f/tumblr_nlku10bAC91snbxmfo1_400.gif') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--dark-carbon));
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    z-index: 10;
+}
+
+.logo { height: 40px; }
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.hero-content {
+    z-index: 1;
+    margin: auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+/* O Botão Proximos Passos */
+.btn-scroll {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid #e10600; /* Vermelho F1 */
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Efeito de preenchimento ao passar o mouse (Hover) */
+.btn-scroll::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #e10600;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn-scroll:hover {
+    color: #fff;
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.6);
+    transform: translateY(-3px); /* Leve pulo para cima */
+}
+
+.btn-scroll:hover::before {
+    left: 0;
+}
+
+.btn-scroll:active {
+    transform: translateY(-1px);
+}
+/* Layout de Conteúdo */
+.container { padding: 5rem 10%; }
+
+.section-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 8rem;
+}
+
+.reverse { flex-direction: row-reverse; }
+
+.text-block h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--f1-red);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    filter: grayscale(30%);
+    transition: 0.5s;
+}
+
+.image-block img:hover { filter: grayscale(0%); transform: scale(1.02); }
+
+/* Grid de Estatísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 4rem;
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    color: var(--f1-red);
+    font-family: 'Orbitron', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    background: #000;
+    font-size: 0.8rem;
+    color: var(--silver);
+}
